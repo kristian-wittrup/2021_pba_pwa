@@ -2,7 +2,13 @@
   <div>
     <h2>users:</h2>
     <div v-for="user in users" :key="user.id">
-      {{user.first_name}}  
+       - {{ user.id }}
+
+      <!-- router props -->
+      <router-link :to="{ name: 'UserDetails', params:{ id : user.id }}">
+        {{user.first_name}}
+      </router-link>
+      <router-view></router-view>
     </div>
   </div>
 </template>
